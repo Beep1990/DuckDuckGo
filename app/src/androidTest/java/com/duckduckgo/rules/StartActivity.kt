@@ -23,7 +23,7 @@ import com.duckduckgo.app.launch.LaunchBridgeActivity
 
 class StartActivity {
 
-    fun startActivity() {
+    fun appStart() {
         val activityScenario: ActivityScenario<LaunchBridgeActivity>
         val intent = Intent(ApplicationProvider.getApplicationContext(), LaunchBridgeActivity::class.java)
         activityScenario = ActivityScenario.launch(intent)
