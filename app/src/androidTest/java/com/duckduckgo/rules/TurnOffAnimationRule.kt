@@ -42,5 +42,4 @@ class TurnOffAnimationRule : Instrumentation() {
     private fun putDeviceSetting(key: String, value: Int) {
         device.executeShellCommand("settings put global $key $value")
     }
-
 }
