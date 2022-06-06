@@ -52,5 +52,6 @@ class AllowNotificationsRule:Instrumentation(), TestRule {
         base: Statement?,
         description: Description?
     ): Statement {
+        TODO("Not yet implemented")
     }
 }
