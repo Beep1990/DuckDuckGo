@@ -24,7 +24,7 @@ fun scrollAndEnterTextFunction(@IdRes viewId: Int, text: String) {
         .perform(scrollTo(), typeText(text), closeSoftKeyboard())
 }
 
-fun clearTextFunction(@IdRes viewId: Int) {
+fun deleteTextFunction(@IdRes viewId: Int) {
     onView(withId(viewId))
         .perform(clearText(), closeSoftKeyboard())
 }
