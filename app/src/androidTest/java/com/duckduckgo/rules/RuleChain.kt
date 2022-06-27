@@ -22,5 +22,4 @@ import org.junit.rules.TestRule
 class RuleChain {
     fun RuleChain() : TestRule = RuleChain.outerRule(TurnOffAnimationRule())
         .around(AllowNotificationsRule())
-
 }

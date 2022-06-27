@@ -45,7 +45,6 @@ class AllowNotificationsRule:Instrumentation(), TestRule {
 
     private fun putDeviceSetting(key: String,value: Int) {
         device.executeShellCommand("settings put global $key $value")
-
     }
 
     override fun apply(
