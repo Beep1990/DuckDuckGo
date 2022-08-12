@@ -29,8 +29,12 @@ import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition
 import org.hamcrest.*
 import org.hamcrest.CoreMatchers.allOf
-
-
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions.click
+import androidx.test.espresso.action.ViewActions.scrollTo
+import androidx.test.espresso.matcher.ViewMatchers
+import androidx.test.espresso.matcher.ViewMatchers.withId
+import org.hamcrest.CoreMatchers
 
 fun tapOnButton(@IdRes viewId: Int) {
     onView(withId(viewId)).perform(click())
@@ -42,6 +46,7 @@ fun scrollAndTapButton(@IdRes viewId: Int) {
 
 fun tapOnTheView(@IdRes viewId: Int, @StringRes stringId: String) {
     onView(allOf(withId(viewId), ViewMatchers.withText(stringId)))
+    onView(CoreMatchers.allOf(withId(viewId), ViewMatchers.withText(stringId)))
         .perform(click())
 }
 
@@ -74,4 +79,8 @@ fun pinchIn(@IdRes viewId: Int, position: Int, steps: Int) {
 
 fun pinchOut(@IdRes viewId: Int, position: Int, steps: Int) {
     device.findObject(UiSelector().index(viewId)).pinchOut(position, steps)
+}
+
+    onView(CoreMatchers.allOf(withId(viewId), ViewMatchers.withText(stringId)))
+        .perform(scrollTo(), click())
 }
