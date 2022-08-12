@@ -27,10 +27,12 @@ import androidx.test.espresso.action.ViewActions.scrollTo
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition
-import org.hamcrest.*
+import androidx.test.uiautomator.UiDevice
+import androidx.test.uiautomator.UiSelector
+import com.duckduckgo.utils.uiDevice
 import org.hamcrest.CoreMatchers.allOf
 
-
+private val device: UiDevice = uiDevice
 
 fun tapOnButton(@IdRes viewId: Int) {
     onView(withId(viewId)).perform(click())
