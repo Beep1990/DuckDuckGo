@@ -24,14 +24,14 @@ import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.action.ViewActions.longClick
 import androidx.test.espresso.action.ViewActions.openLinkWithUri
 import androidx.test.espresso.action.ViewActions.scrollTo
-import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition
+import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.uiautomator.UiDevice
 import androidx.test.uiautomator.UiSelector
 import com.duckduckgo.utils.uiDevice
-import org.hamcrest.CoreMatchers
 import org.hamcrest.CoreMatchers.allOf
+import org.hamcrest.Matchers
 
 private val device: UiDevice = uiDevice
 
@@ -39,18 +39,23 @@ fun tapOnButton(@IdRes viewId: Int) {
     onView(withId(viewId)).perform(click())
 }
 
+fun tapOnButtonWithText(@IdRes viewId: Int, @StringRes stringId: Int) {
+    onView(allOf(withId(viewId), withText(stringId)))
+        .perform(click())
+}
+
 fun scrollAndTapButton(@IdRes viewId: Int) {
     onView(withId(viewId)).perform(scrollTo(), click())
 }
 
 fun tapOnTheView(@IdRes viewId: Int, @StringRes stringId: String) {
-    onView(allOf(withId(viewId), ViewMatchers.withText(stringId)))
-    onView(CoreMatchers.allOf(withId(viewId), ViewMatchers.withText(stringId)))
+    onView(allOf(withId(viewId), withText(stringId)))
+    onView(allOf(withId(viewId), withText(stringId)))
         .perform(click())
 }
 
 fun tapOnSpecificText(@IdRes viewId: Int, @StringRes stringId: Int) {
-    onView(allOf(withId(viewId), ViewMatchers.withText(stringId)))
+    onView(allOf(withId(viewId), withText(stringId)))
         .perform(scrollTo(), click())
 }
 
@@ -60,7 +65,7 @@ fun clickOnItemAtPosition(@IdRes viewId: Int, position: Int) {
 }
 
 fun tapOnTheUrl(@IdRes viewId: Int, @StringRes stringId: String) {
-    onView(allOf(withId(viewId), ViewMatchers.withText(stringId)))
+    onView(allOf(withId(viewId), withText(stringId)))
         .perform(openLinkWithUri(stringId))
 }
 
@@ -79,3 +84,10 @@ fun pinchIn(@IdRes viewId: Int, position: Int, steps: Int) {
 fun pinchOut(@IdRes viewId: Int, position: Int, steps: Int) {
     device.findObject(UiSelector().index(viewId)).pinchOut(position, steps)
 }
+
+fun tapOnTheNewIcon(@IdRes viewId: Int, position: Int) {
+    onView(Matchers.allOf(withId(viewId)))
+        .perform(actionOnItemAtPosition<RecyclerView.ViewHolder>(position, click()))
+}
+
+

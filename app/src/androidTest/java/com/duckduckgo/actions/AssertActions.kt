@@ -16,3 +16,14 @@
 
 package com.duckduckgo.actions
 
+import androidx.annotation.IdRes
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.assertion.ViewAssertions
+import androidx.test.espresso.matcher.ViewMatchers
+import androidx.test.espresso.matcher.ViewMatchers.withId
+import org.hamcrest.CoreMatchers.allOf
+
+/*fun newIconCheck(@IdRes viewId: Int, position: Int) {
+    onView(allOf(withId(viewId), withId(position)))
+        .check(ViewAssertions.matches(ViewMatchers.isSelected()))
+}*/

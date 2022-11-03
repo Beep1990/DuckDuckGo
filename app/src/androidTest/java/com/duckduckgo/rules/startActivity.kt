@@ -19,13 +19,10 @@ package com.duckduckgo.rules
 import android.content.Intent
 import androidx.test.core.app.ActivityScenario
 import androidx.test.core.app.ApplicationProvider
-import com.duckduckgo.app.launch.LaunchBridgeActivity
+import com.duckduckgo.app.browser.BrowserActivity
 
-class StartActivity {
-
-    fun appStart() {
-        val activityScenario: ActivityScenario<LaunchBridgeActivity>
-        val intent = Intent(ApplicationProvider.getApplicationContext(), LaunchBridgeActivity::class.java)
-        activityScenario = ActivityScenario.launch(intent)
-    }
+fun startActivity() {
+    val activityScenario : ActivityScenario<BrowserActivity>
+    val intent = Intent(ApplicationProvider.getApplicationContext(), BrowserActivity::class.java)
+    activityScenario = ActivityScenario.launch(intent)
 }

@@ -19,7 +19,6 @@ package com.duckduckgo.rules
 import org.junit.rules.RuleChain
 import org.junit.rules.TestRule
 
-class RuleChain {
-    fun RuleChain(): TestRule = RuleChain.outerRule(TurnOffAnimationRule())
-        .around(AllowNotificationsRule())
-}
+@Suppress("TestFunctionName")
+fun ApplicationTestRule(): TestRule = RuleChain.outerRule(TurnOffAnimationRule())
+    .around(AllowNotificationsRule())
