@@ -18,14 +18,17 @@ package com.duckduckgo.robots
 
 import com.duckduckgo.actions.enterTextFunction
 import com.duckduckgo.actions.tapOnButton
+import com.duckduckgo.actions.tapOnItemPosition
 import com.duckduckgo.app.browser.R
+import com.duckduckgo.actions.assertTextIsDisplayed
+import com.duckduckgo.utils.wpplfull
 
-inline fun bookmarkScreenRobot(block: BookmarkScreenRobot.() -> Unit) = BookmarkScreenRobot.block()
+inline fun BookmarkScreenRobot(block: BookmarkScreenRobot.() -> Unit) = BookmarkScreenRobot.block()
 
 object BookmarkScreenRobot {
 
     fun openWebsite (website: String) {
-        enterTextFunction(R.id.omnibarTextInputMockup, website)
+        enterTextFunction(R.id.omnibarTextInputMockup, wpplfull)
     }
 
     fun tapMenuButton () {
@@ -34,6 +37,18 @@ object BookmarkScreenRobot {
 
     fun tapAddBookmarkButton () {
         tapOnButton(R.id.addBookmarksMenuItem)
+    }
+
+    fun tapBookmarksButton () {
+        tapOnButton(R.id.bookmarksMenuItem)
+    }
+
+    fun openBookmark(){
+        tapOnItemPosition(R.id.savedSiteSectionTitle,1)
+    }
+
+    fun bookmarkCheck() {
+        assertTextIsDisplayed(R.id.omnibarTextInput,wpplfull)
     }
 }
 
