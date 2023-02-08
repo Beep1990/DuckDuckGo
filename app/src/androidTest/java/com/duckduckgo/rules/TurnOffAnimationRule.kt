@@ -16,7 +16,6 @@
 
 package com.duckduckgo.rules
 
-
 import androidx.test.uiautomator.UiDevice
 import com.duckduckgo.utils.uiDevice
 import org.junit.rules.ExternalResource

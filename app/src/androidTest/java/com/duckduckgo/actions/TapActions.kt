@@ -89,5 +89,3 @@ fun tapOnTheNewIcon(@IdRes viewId: Int, position: Int) {
     onView(Matchers.allOf(withId(viewId)))
         .perform(actionOnItemAtPosition<RecyclerView.ViewHolder>(position, click()))
 }
-
-

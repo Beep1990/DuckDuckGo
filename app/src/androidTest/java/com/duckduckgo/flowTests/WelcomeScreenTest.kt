@@ -17,5 +17,4 @@
 package com.duckduckgo.flowTests
 
 class WelcomeScreenTest {
-
 }
