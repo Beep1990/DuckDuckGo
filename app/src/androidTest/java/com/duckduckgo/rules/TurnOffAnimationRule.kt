@@ -16,18 +16,16 @@
 
 package com.duckduckgo.rules
 
-import android.app.Instrumentation
+
 import androidx.test.uiautomator.UiDevice
 import com.duckduckgo.utils.uiDevice
-import org.junit.rules.TestRule
-import org.junit.runner.Description
-import org.junit.runners.model.Statement
+import org.junit.rules.ExternalResource
 
-class TurnOffAnimationRule : Instrumentation(), TestRule {
+class TurnOffAnimationRule : ExternalResource(){
 
     private val device: UiDevice = uiDevice
 
-     override fun before() {
+    override fun before() {
         setAnimationsEnabled(false)
     }
 
@@ -44,12 +42,5 @@ class TurnOffAnimationRule : Instrumentation(), TestRule {
 
     private fun putDeviceSetting(key: String, value: Int) {
         device.executeShellCommand("settings put global $key $value")
-    }
-
-    override fun apply(
-        base: Statement?,
-        description: Description?
-    ): Statement {
-        TODO("Not yet implemented")
     }
 }

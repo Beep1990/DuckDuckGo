@@ -14,12 +14,9 @@
  * limitations under the License.
  */
 
-package com.duckduckgo.rules
+package com.duckduckgo.utils
 
-import org.junit.rules.RuleChain
-import org.junit.rules.TestRule
-
-class RuleChain {
-    fun RuleChain(): TestRule = RuleChain.outerRule(TurnOffAnimationRule())
-        .around(AllowNotificationsRule())
-}
+//Inputy stron internetowych
+val wppl = "www.wp.pl"
+val wpplfull = "https://www.wp.pl/"
+val wpshort = "wp.pl"
