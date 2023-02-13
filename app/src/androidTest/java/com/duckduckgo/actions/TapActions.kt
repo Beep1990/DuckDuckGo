@@ -45,10 +45,6 @@ fun tapOnButtonWithText(@IdRes viewId: Int, @StringRes stringId: Int) {
         .perform(click())
 }
 
-fun tapOnReturnKeyboardButton(@IdRes viewId: Int) {
-    onView(withId(viewId)).perform(pressImeActionButton())
-}
-
 fun scrollAndTapButton(@IdRes viewId: Int) {
     onView(withId(viewId)).perform(scrollTo(), click())
 }
@@ -90,7 +86,6 @@ fun pinchOut(@IdRes viewId: Int, position: Int, steps: Int) {
     device.findObject(UiSelector().index(viewId)).pinchOut(position, steps)
 }
 
-fun tapOnItemPosition(@IdRes viewId: Int, position: Int) {
     onView(Matchers.allOf(withId(viewId)))
         .perform(actionOnItemAtPosition<RecyclerView.ViewHolder>(position, click()))
 }

@@ -22,8 +22,3 @@ import androidx.annotation.IdRes
     onView(allOf(withId(viewId), withId(position)))
         .check(ViewAssertions.matches(ViewMatchers.isSelected()))
 }*/
-
-fun fireproofCheckAssertion(@IdRes viewId: Int, stringId: String ) {
-    onView(allOf(withId(viewId), withText(stringId)))
-        .check(matches(withText(stringId)))
-}

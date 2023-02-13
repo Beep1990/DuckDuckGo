@@ -16,7 +16,6 @@
 
 package com.duckduckgo.flowTests
 
-
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.duckduckgo.robots.ChangeAppIconRobot
 import com.duckduckgo.rules.ApplicationTestRule
@@ -25,7 +24,6 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-//import com.duckduckgo.actions.newIconCheck
 
 @RunWith(AndroidJUnit4::class)
 class ChangeIconTest {
@@ -57,5 +55,4 @@ class ChangeIconTest {
             iconCheck()
         }*/
     }
-
 }

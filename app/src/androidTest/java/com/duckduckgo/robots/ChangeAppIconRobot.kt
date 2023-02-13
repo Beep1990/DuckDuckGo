@@ -16,15 +16,6 @@
 
 package com.duckduckgo.robots
 
-
-import androidx.test.espresso.matcher.ViewMatchers.withId
-import com.duckduckgo.actions.tapOnButton
-import com.duckduckgo.actions.tapOnButtonWithText
-import com.duckduckgo.actions.tapOnItemPosition
-import com.duckduckgo.app.browser.R
-import com.duckduckgo.utils.waitUntilViewIsDisplayed
-//import com.duckduckgo.actions.newIconCheck
-
 inline fun ChangeAppIconRobot(block: ChangeAppIconRobot.() -> Unit) = ChangeAppIconRobot.block()
 
 object ChangeAppIconRobot {
@@ -42,7 +33,6 @@ object ChangeAppIconRobot {
     }
 
     fun newIconTap() {
-        tapOnItemPosition(R.id.appIconsList, 1)
     }
 
     fun applyNewIcon() {
