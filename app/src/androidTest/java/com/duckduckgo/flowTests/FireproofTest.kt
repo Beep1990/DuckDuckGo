@@ -17,7 +17,7 @@
 package com.duckduckgo.flowTests
 
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.duckduckgo.robots.ChangeAppIconRobot
+import com.duckduckgo.robots.FireproofingRobot
 import com.duckduckgo.rules.ApplicationTestRule
 import com.duckduckgo.rules.startActivity
 import org.junit.Before
@@ -26,7 +26,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class ChangeIconTest {
+class FireproofTest {
 
     @get:Rule
     val applicationTestRule = ApplicationTestRule()
@@ -37,22 +37,15 @@ class ChangeIconTest {
     }
 
     @Test
-    fun changeIcon() {
+    fun fireproofCase() {
 
-        ChangeAppIconRobot {
-            tapMenuButton()
-            tapSettingsButton()
-            tapAppIconButton()
-            newIconTap()
-            applyNewIcon()
+        FireproofingRobot {
+            tapLinkBar()
+            enterWebLink()
+            enableFireproof()
+            fireproofCheck()
         }
 
-        /*startActivity()
-
-        ChangeAppIconRobot {
-            tapMenuButton()
-            //tapSettingsButton()
-            iconCheck()
-        }*/
     }
+
 }

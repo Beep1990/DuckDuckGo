@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 DuckDuckGo
+ * Copyright (c) 2023 DuckDuckGo
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,17 +16,15 @@
 
 package com.duckduckgo.flowTests
 
-import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.duckduckgo.robots.ChangeAppIconRobot
+import com.duckduckgo.robots.BookmarkScreenRobot
 import com.duckduckgo.rules.ApplicationTestRule
 import com.duckduckgo.rules.startActivity
+import com.duckduckgo.utils.wpplfull
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import org.junit.runner.RunWith
 
-@RunWith(AndroidJUnit4::class)
-class ChangeIconTest {
+class AddBookmarkTest {
 
     @get:Rule
     val applicationTestRule = ApplicationTestRule()
@@ -37,22 +35,16 @@ class ChangeIconTest {
     }
 
     @Test
-    fun changeIcon() {
-
-        ChangeAppIconRobot {
+    fun addBookmark(){
+        BookmarkScreenRobot{
+            openWebsite()
             tapMenuButton()
-            tapSettingsButton()
-            tapAppIconButton()
-            newIconTap()
-            applyNewIcon()
+            tapAddBookmarkButton()
+            tapMenuButton()
+            tapBookmarksButton()
+            openBookmark()
+            bookmarkCheck()
         }
-
-        /*startActivity()
-
-        ChangeAppIconRobot {
-            tapMenuButton()
-            //tapSettingsButton()
-            iconCheck()
-        }*/
     }
+
 }

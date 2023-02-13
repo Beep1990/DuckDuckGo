@@ -23,6 +23,7 @@ import androidx.test.espresso.Espresso.onView
 import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.action.ViewActions.longClick
 import androidx.test.espresso.action.ViewActions.openLinkWithUri
+import androidx.test.espresso.action.ViewActions.pressImeActionButton
 import androidx.test.espresso.action.ViewActions.scrollTo
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition
@@ -85,7 +86,6 @@ fun pinchOut(@IdRes viewId: Int, position: Int, steps: Int) {
     device.findObject(UiSelector().index(viewId)).pinchOut(position, steps)
 }
 
-fun tapOnTheNewIcon(@IdRes viewId: Int, position: Int) {
     onView(Matchers.allOf(withId(viewId)))
         .perform(actionOnItemAtPosition<RecyclerView.ViewHolder>(position, click()))
 }

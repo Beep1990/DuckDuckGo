@@ -14,8 +14,9 @@
  * limitations under the License.
  */
 
-package com.duckduckgo.flowTests
+package com.duckduckgo.utils
 
-class WelcomeScreenTest {
-
-}
+//Inputy stron internetowych
+val wppl = "www.wp.pl"
+val wpplfull = "https://www.wp.pl/"
+val wpshort = "wp.pl"
